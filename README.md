@@ -19,3 +19,14 @@ model_vis$ conda activate vis-env
 ```
 
 ## 2. Bazel
+[Bazel](https://www.bazel.build) can be installed with [Bazelisk](https://docs.bazel.build/versions/master/install-bazelisk.html) , it downloads the appropriate bazel version for the current working directory.
+
+#### Create symbolic link to use bazelisk whenever "bazel" is called
+```ln -s $(which bazelisk) bazel```
+
+<!-- give permissions to run npm -->
+<!-- sudo chown -R $USER /usr/local/lib/node_modules -->
+<!-- npm install -g @bazel/bazelisk  -->
+
+<!-- Symbolic link to bazel -->
+<!-- ln -s $(which bazelisk) bazel -->

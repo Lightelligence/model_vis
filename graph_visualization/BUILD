@@ -2,32 +2,7 @@ package(
     default_visibility = ["//visibility:public"],
 )
 
-load("//sdk2:sdk2.bzl", "lt_nodejs_library")
-load("@npm_bazel_jasmine//:index.bzl", "jasmine_node_test")
-
-jasmine_node_test(
-    name = "add_test",
-    srcs = [
-        "add_test.js",
-    ],
-    data = [
-        ":add",
-    ],
-    deps = [
-        "@npm//jasmine",
-    ],
-)
-
-lt_nodejs_library(
-    name = "add",
-    srcs = [
-        "add.js",
-    ],
-    data = [
-    ],
-    deps = [
-    ],
-)
+load("//:rules.bzl", "lt_nodejs_library")
 
 py_binary(
     name = "run_web_server",
