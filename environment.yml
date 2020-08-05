@@ -24,4 +24,3 @@ dependencies:
       - onnx == 1.6
       - onnxruntime
       - Pillow
-# a
