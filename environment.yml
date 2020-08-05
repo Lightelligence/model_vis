@@ -14,3 +14,14 @@ dependencies:
       - yapf
       - Flask
       - protobuf
+      - absl-py
+      - gast
+      - astor
+      - termcolor
+      - keras_applications
+      - keras_preprocessing
+      - plotly
+      - onnx == 1.6
+      - onnxruntime
+      - Pillow
+
