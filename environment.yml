@@ -24,8 +24,4 @@ dependencies:
       - onnx == 1.6
       - onnxruntime
       - Pillow
-<<<<<<< HEAD
-      - /data/algo/wheels/lightelligence_sdk-0.1.5-py3-none-any.whl
-      - tensorflow==1.14
-=======
->>>>>>> fb77e5e39053806711e011258d2e7ff4348716bb
+      - tensorflow
