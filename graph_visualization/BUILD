@@ -12,7 +12,11 @@ py_binary(
     ],
     main = "run_web_server.py",
     deps = [
+<<<<<<< HEAD
         ":tf_proto_to_json",
+=======
+        ":proto_to_json",
+>>>>>>> fb77e5e39053806711e011258d2e7ff4348716bb
     ],
 )
 
@@ -21,6 +25,7 @@ py_binary(
     srcs = ["proto_to_json.py"],
     main = "proto_to_json.py",
     deps = [
+<<<<<<< HEAD
     ],
 )
 
@@ -29,5 +34,7 @@ py_binary(
     srcs = ["tf_proto_to_json.py"],
     main = "tf_proto_to_json.py",
     deps = [
+=======
+>>>>>>> fb77e5e39053806711e011258d2e7ff4348716bb
     ],
 )
