@@ -3,12 +3,12 @@ import os
 
 import numpy as np
 
+import proto_to_json
 from sdk2.common import py_test_util
 from sdk2.graph.tests import tf_mnist_sample
 from sdk2.graph.transform_graph.graph_transformers.tests import \
     test_collapse_supported_subgraphs
 from sdk2.proto import calibration_pb2
-from sdk2.visuals.javascript_tests import proto_to_json
 
 
 class test_d3_graphs(py_test_util.PythonTestCase):

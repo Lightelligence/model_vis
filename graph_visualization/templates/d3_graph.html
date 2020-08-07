@@ -139,7 +139,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.0.1/spin.min.js"></script>
-    <script src="static/d3_graph.js"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='d3_graph.js') }}"
+    ></script>
 
     <!-- Always mention the folder 'static' when running from Flask as flask requires that folder -->
     <p id="node_search_label">Enter the name of node to search</p>

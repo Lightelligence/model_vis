@@ -14,3 +14,15 @@ dependencies:
       - yapf
       - Flask
       - protobuf
+      - absl-py
+      - gast
+      - astor
+      - termcolor
+      - keras_applications
+      - keras_preprocessing
+      - plotly
+      - onnx == 1.6
+      - onnxruntime
+      - Pillow
+      - /data/algo/wheels/lightelligence_sdk-0.1.5-py3-none-any.whl
+      - tensorflow==1.14

@@ -3,8 +3,8 @@ import os
 
 from flask import Flask, jsonify, render_template
 
+import tf_proto_to_json
 from sdk2.graph import lgf_graph
-from sdk2.visuals.javascript_tests import proto_to_json
 
 app = Flask(__name__,
             template_folder=os.path.join(os.path.dirname(__file__), "templates"))
@@ -53,9 +53,8 @@ def main():
                         help="Output directory for storing error pb")
     parser.add_argument("--no_text", default=False, action="store_true")
     args = parser.parse_args()
-    app.config["jsonified"] = proto_to_json.main(
-        lgf_graph.LightGraph.lgf_pb_to_graph(
-            lgf_graph.LightGraph.read_lgf_pb(args.pb_graph_path)),
+    app.config["jsonified"] = tf_proto_to_json.main(
+        args.pb_graph_path,
         reduce_unsupported=args.reduce_unsupported,
         reduce_while_nodes=args.reduce_while_nodes,
         list_of_pb_histogram_folder_paths=args.pb_histogram_folder_path,

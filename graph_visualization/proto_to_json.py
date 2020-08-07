@@ -190,6 +190,7 @@ def main(light_graph,
     for link in list_of_links:
         histograms_per_edge = []
         # Unsupported edges have port as -1
+        # TODO CHANGE THIS SO THAT IT USES SPLIT FUNCTION , OTHERWISE IT'D FAIL IF PORT IS "NAME:12"
         port = int(link[2][-1]) if not link[2].startswith("ctrl_input") else -1
 
         if not link[0].startswith("Dummy"):
