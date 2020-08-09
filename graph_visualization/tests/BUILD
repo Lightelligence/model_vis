@@ -6,3 +6,10 @@ py_test(
     deps = [
     ],
 )
+
+py_test(
+    name = "tf_test_d3_graph",
+    srcs = ["tf_test_d3_graph.py"],
+    deps = [
+    ],
+)

@@ -4,6 +4,7 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 
+# TODO check if path to model is a .pb file and with the type tf
 def main(path_to_model, **kwargs):
     list_of_links = []
     # Used to store i/p nodes that are input to the graph and are non-dummy nodes.
@@ -20,7 +21,6 @@ def main(path_to_model, **kwargs):
 
     not_in_graph_node_to_dummy_map = {}
     with tf.Session(graph=tf.Graph()) as sess:
-        # name="" is important to ensure we don't get spurious prefixing
         tf.import_graph_def(graph_def, name="")
         g = tf.get_default_graph()
 
@@ -75,6 +75,7 @@ def main(path_to_model, **kwargs):
                     list_of_links.append((source, target, linkname))
                     node_set.add(source)
                     node_set.add(target)
+
         # list provides a better layout than set
         list_of_nodes = list(node_set)
 
@@ -125,7 +126,7 @@ def main(path_to_model, **kwargs):
                 related_tensor = g.get_operation_by_name(link[0]).outputs[port]
 
                 hover_text = "Shape:" + extract_shape(
-                    related_tensor) + "Dtype:" + related_tensor.dtype.name
+                    related_tensor) + "<br> Dtype:" + related_tensor.dtype.name
             graph["links"].append({
                 "source": link[0],
                 "target": link[1],
@@ -138,8 +139,6 @@ def main(path_to_model, **kwargs):
         graph["input_nodes"] = []
         for node in graph_inputs:
             graph["input_nodes"].append({"name": node})
-        # print("GRAPHING NODES")
-        # print(graph["nodes"])
         return graph
 
 

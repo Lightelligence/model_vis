@@ -3,12 +3,7 @@ import os
 
 from flask import Flask, jsonify, render_template
 
-<<<<<<< HEAD
 import tf_proto_to_json
-=======
-import proto_to_json
->>>>>>> fb77e5e39053806711e011258d2e7ff4348716bb
-from sdk2.graph import lgf_graph
 
 app = Flask(__name__,
             template_folder=os.path.join(os.path.dirname(__file__), "templates"))
