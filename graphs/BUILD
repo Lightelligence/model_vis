@@ -7,3 +7,10 @@ py_binary(
     deps = [
     ],
 )
+
+filegroup(
+    name = "tensorflow_inception_graph",
+    srcs = [
+        "tensorflow_inception_graph.pb",
+    ],
+)

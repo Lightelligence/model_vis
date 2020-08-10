@@ -1,15 +1,11 @@
 package(default_visibility = ["//visibility:public"])
 
 py_test(
-    name = "test_d3_graph",
-    srcs = ["test_d3_graph.py"],
+    name = "test_tf_d3_graph",
+    srcs = ["test_tf_d3_graph.py"],
+    data = ["//graphs:tensorflow_inception_graph"],
     deps = [
-    ],
-)
-
-py_test(
-    name = "tf_test_d3_graph",
-    srcs = ["tf_test_d3_graph.py"],
-    deps = [
+        "//graph_visualization:tf_proto_to_json",
+        "//graphs:sample_tf_graph",
     ],
 )

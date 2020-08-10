@@ -17,14 +17,6 @@ py_binary(
 )
 
 py_binary(
-    name = "proto_to_json",
-    srcs = ["proto_to_json.py"],
-    main = "proto_to_json.py",
-    deps = [
-    ],
-)
-
-py_binary(
     name = "tf_proto_to_json",
     srcs = ["tf_proto_to_json.py"],
     main = "tf_proto_to_json.py",
