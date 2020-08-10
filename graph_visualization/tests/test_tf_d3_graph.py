@@ -8,7 +8,6 @@ from graphs import sample_tf_graph
 
 
 class test_tf_d3_graph(unittest.TestCase):
-
     def setUp(self):
         self.tmp_dir = tempfile.mkdtemp()
 
@@ -27,9 +26,6 @@ class test_tf_d3_graph(unittest.TestCase):
         graph_path = os.path.join("graphs", "tensorflow_inception_graph.pb")
         self.assertTrue(os.path.exists(graph_path))
         tf_proto_to_json.main(graph_path)
-
-    def test_folder_path(self, path):
-        self.assertEqual(os.path.exists(path), True)
 
 
 if __name__ == "__main__":
