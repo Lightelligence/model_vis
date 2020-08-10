@@ -17,6 +17,7 @@ def create_sample_tf_model(saved_model_dir):
     a = tf.multiply(d, e, name='a')
     init_op = tf.global_variables_initializer()
     graph = tf.get_default_graph()
+    graph_path = ""
     with tf.Session(graph=graph) as sess:
         # initialise the variables
         sess.run(init_op)
@@ -27,12 +28,13 @@ def create_sample_tf_model(saved_model_dir):
         graph_proto = graph.as_graph_def()
         file.write(graph_proto.SerializeToString())
         file.close()
+    return graph_path
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--saved_model_dir",
-                        default="u/arokade/Platform/tmp/",
+                        default="/tmp",
                         type=str,
                         help="dir for saved model.")
     args = parser.parse_args()
