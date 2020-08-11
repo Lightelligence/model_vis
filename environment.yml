@@ -24,4 +24,4 @@ dependencies:
       - onnx == 1.6
       - onnxruntime
       - Pillow
-      - tensorflow
+      - tensorflow == 1.14
