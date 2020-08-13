@@ -5,12 +5,12 @@ package(
 load("//:rules.bzl", "lt_nodejs_library")
 
 py_binary(
-    name = "run_web_server",
-    srcs = ["run_web_server.py"],
+    name = "plot_graph",
+    srcs = ["plot_graph.py"],
     data = [
         "//graph_visualization/templates:d3_graph",
     ],
-    main = "run_web_server.py",
+    main = "plot_graph.py",
     deps = [
         ":tf_proto_to_json",
     ],
