@@ -1,12 +1,12 @@
 import argparse
 import os
 
+import tf_proto_to_json
 from flask import Flask, jsonify, render_template
 
-import tf_proto_to_json
-
 app = Flask(__name__,
-            template_folder=os.path.join(os.path.dirname(__file__), "templates"))
+            template_folder=os.path.join(os.path.dirname(__file__),
+                                         "templates"))
 
 
 @app.route("/")
@@ -27,12 +27,18 @@ def main():
     """ Runs a web server based on flask, specifying port is optional
     (defaulted to 5000) """
     parser = argparse.ArgumentParser()
-    parser.add_argument("--port", type=int, help="path to a lgf pb", default=5000)
-    parser.add_argument("--pb_graph_path", type=str, help="path to a pb graph file")
-    parser.add_argument("--pb_histogram_folder_path",
+    parser.add_argument("--port",
+                        type=int,
+                        help="port number (default 5000)",
+                        default=5000)
+    parser.add_argument("--pb_graph_path",
                         type=str,
-                        help="path to a histogram folder containing protobuf files",
-                        action="append")
+                        help="path to a pb graph file")
+    parser.add_argument(
+        "--pb_histogram_folder_path",
+        type=str,
+        help="path to a histogram folder containing protobuf files",
+        action="append")
     parser.add_argument("--reduce_unsupported",
                         action="store_true",
                         help=("reduces unsupported nodes by deleting them if"
@@ -51,9 +57,18 @@ def main():
                         type=str,
                         help="Output directory for storing error pb")
     parser.add_argument("--no_text", default=False, action="store_true")
+    parser.add_argument(
+        "--graph_pb_type",
+        default="tf",
+        type=str,
+        help=
+        ("Currently defaulted to 'tf' , Other supported types in future releases are 'onnx' ,'lgf'"
+         ))
     args = parser.parse_args()
+
     app.config["jsonified"] = tf_proto_to_json.main(
         args.pb_graph_path,
+        graph_pb_type=args.graph_pb_type,
         reduce_unsupported=args.reduce_unsupported,
         reduce_while_nodes=args.reduce_while_nodes,
         list_of_pb_histogram_folder_paths=args.pb_histogram_folder_path,

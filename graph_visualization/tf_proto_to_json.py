@@ -6,6 +6,9 @@ tf.disable_v2_behavior()
 
 # TODO check if path to model is a .pb file and with the type tf
 def main(path_to_model, **kwargs):
+    if kwargs["graph_pb_type"] != "tf":
+        raise KeyError("The type {} is not supported".format(
+            kwargs["graph_pb_type"]))
     list_of_links = []
     # Used to store i/p nodes that are input to the graph and are non-dummy nodes.
     node_set = set()
@@ -57,13 +60,16 @@ def main(path_to_model, **kwargs):
                 try:
                     g.get_operation_by_name(ctrl_input_node_obj.name)
                 except Exception:
-                    print("Could not find control input {0} in the graph".format(
-                        ctrl_input_node_obj.name))
+                    print(
+                        "Could not find control input {0} in the graph".format(
+                            ctrl_input_node_obj.name))
                 node_set.add(ctrl_input_node_obj.name)
-                list_of_links.append((ctrl_input_node_obj.name, node.name, "ctrl_input"))
+                list_of_links.append(
+                    (ctrl_input_node_obj.name, node.name, "ctrl_input"))
 
             for output_node_obj in op.outputs:
-                [output_edge_name, port] = get_node_name_and_port(output_node_obj.name)
+                [output_edge_name,
+                 port] = get_node_name_and_port(output_node_obj.name)
                 try:
                     g.get_operation_by_name(output_edge_name)
                 except Exception:
