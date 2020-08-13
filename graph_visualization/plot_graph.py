@@ -1,26 +1,8 @@
 import argparse
 import os
 
+import create_flask_app
 import tf_proto_to_json
-from flask import Flask, jsonify, render_template
-
-app = Flask(__name__,
-            template_folder=os.path.join(os.path.dirname(__file__),
-                                         "templates"))
-
-
-@app.route("/")
-def home():
-    """A template is rendered as Python flask searches for all html files
-     in 'templates'folder, which is also why all
-     HTML files are placed in that directory."""
-    return render_template("d3_graph.html")
-
-
-@app.route("/graph.json")
-def graph():
-    """ Serves a graph which is converted to JSON format."""
-    return jsonify(app.config["jsonified"])
 
 
 def main():
@@ -65,7 +47,8 @@ def main():
         ("Currently defaulted to 'tf' , Other supported types in future releases are 'onnx' ,'lgf'"
          ))
     args = parser.parse_args()
-    app.config["jsonified"] = tf_proto_to_json.main(
+
+    json_object = tf_proto_to_json.main(
         args.pb_graph_path,
         graph_pb_type=args.graph_pb_type,
         reduce_unsupported=args.reduce_unsupported,
@@ -73,7 +56,8 @@ def main():
         list_of_pb_histogram_folder_paths=args.pb_histogram_folder_path,
         workload=args.workload,
         error_output_dir=args.error_output_dir)
-    app.run(debug=True, host="0.0.0.0", port=args.port)
+
+    create_flask_app.run_flask(args.port, json_object)
 
 
 if __name__ == "__main__":
