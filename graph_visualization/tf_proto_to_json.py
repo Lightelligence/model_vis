@@ -4,10 +4,9 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 
-def main(path_to_model, graph_pb_type="tf", **kwargs):
+def main(path_to_model, graph_pb_type="tf"):
     if graph_pb_type != "tf":
-        raise KeyError("The type {} is not supported".format(
-            kwargs["graph_pb_type"]))
+        raise KeyError("The type {} is not supported".format(graph_pb_type))
     list_of_links = []
     # Used to store i/p nodes that are input to the graph and are non-dummy nodes.
     node_set = set()

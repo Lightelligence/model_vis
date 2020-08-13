@@ -1,0 +1,21 @@
+# Taken from environment.yml
+isort == 5.0.4
+networkx
+flake8
+flake8-quotes
+deprecated
+sklearn
+yapf
+Flask
+protobuf
+absl-py
+gast
+astor
+termcolor
+keras_applications
+keras_preprocessing
+plotly
+onnx == 1.6
+onnxruntime
+Pillow
+tensorflow == 1.14
