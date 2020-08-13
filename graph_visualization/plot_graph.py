@@ -65,7 +65,6 @@ def main():
         ("Currently defaulted to 'tf' , Other supported types in future releases are 'onnx' ,'lgf'"
          ))
     args = parser.parse_args()
-
     app.config["jsonified"] = tf_proto_to_json.main(
         args.pb_graph_path,
         graph_pb_type=args.graph_pb_type,

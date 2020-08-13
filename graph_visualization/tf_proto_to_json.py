@@ -4,9 +4,8 @@ import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
 
 
-# TODO check if path to model is a .pb file and with the type tf
-def main(path_to_model, **kwargs):
-    if kwargs["graph_pb_type"] != "tf":
+def main(path_to_model, graph_pb_type="tf", **kwargs):
+    if graph_pb_type != "tf":
         raise KeyError("The type {} is not supported".format(
             kwargs["graph_pb_type"]))
     list_of_links = []
