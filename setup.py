@@ -10,8 +10,7 @@ import pathlib
 from setuptools import find_packages, setup
 
 here = pathlib.Path(__file__).parent.resolve()
-# print("PATH TO HERE:", here)
-# # Get the long description from the README file
+
 long_description = (here / 'README.md').read_text(encoding='utf-8')
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
