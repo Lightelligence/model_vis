@@ -16,7 +16,7 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 # Fields marked as "Optional" may be commented out.
 
 setup(name='model_vis',
-      version='0.0.1',
+      version='0.0.2',
       description=
       'An easy and interactive graph visualization tool for ML models!!!',
       long_description=long_description,

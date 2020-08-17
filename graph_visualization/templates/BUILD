@@ -1,8 +1,8 @@
+load("//:rules.bzl", "lt_html_library")
+
 package(
     default_visibility = ["//visibility:public"],
 )
-
-load("//:rules.bzl", "lt_html_library")
 
 lt_html_library(
     name = "d3_graph",
