@@ -6,9 +6,8 @@ Dynamic Visualization tool for machine learning models that displays the models
 ### Graph Visualization Usage Documentation
 
 #### Usage
-todo: change to pip package run format when available
+`python -m graph_visualization.plot_graph`<br/>`--pb_graph_path=`_`path_to_protobuf/protobuf.`_`pb`
 
-`bazel run //sdk2/visuals/javascript_tests:plot_lgf_graph --`<br/>`--pb_graph_path=`_`path_to_protobuf/protobuf.`_`pb`<br/>`--port=`_`port_no`<br/>_
 
 Required Parameter:
 -- pb_graph_path (str , path to the protobuf file on the system)
