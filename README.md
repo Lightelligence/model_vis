@@ -135,3 +135,5 @@ Optional Parameters :
 -- port (int, default port is 5000).
 
 -- pb_graph_type (str , currently only supports "tf" and is default. Other types like .onnx to be supported in future)
+
+Click the link provided by the terminal to open into visualization in browser

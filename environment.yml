@@ -5,7 +5,7 @@ dependencies:
   - python=3.6
   - pip
   - pip:
-      - isort == 5.0.4
+      - isort
       - networkx
       - flake8
       - flake8-quotes
