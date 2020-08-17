@@ -100,7 +100,9 @@ The graph visualization is based on Node JS and the visualization library [D3](h
 
 ### Requirements
 
-#### 1. Conda (using Miniconda)
+#### 1. Clone the repo from github
+
+#### 2. Conda (using Miniconda)
 
 ###### Setup Miniconda
 
@@ -114,13 +116,11 @@ model_vis$ conda activate vis-env
 (vis-env) model_vis $
 ```
 
-#### 2. Bazel
+#### 3. Bazel
 [Bazel](https://www.bazel.build) can be installed with [Bazelisk](https://docs.bazel.build/versions/master/install-bazelisk.html) , it downloads the appropriate bazel version for the current working directory.
 
 ###### Create symbolic link to use bazelisk whenever "bazel" is called
 ```ln -s $(which bazelisk) bazel```
-
-#### 3. Clone the repo from github
 
 ### Running the file (thorugh bazel)
 `bazel run //graph_visualization:plot_graph`<br/>` -- --pb_graph_path=`_`abs_path_to_protobuf/protobuf.`_`pb`<br/>`--port=`_`port_no`<br/>_
