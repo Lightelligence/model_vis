@@ -12,6 +12,7 @@ dependencies:
       - deprecated
       - sklearn
       - yapf
+      - flask
       - Flask
       - protobuf
       - absl-py

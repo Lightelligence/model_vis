@@ -2,6 +2,8 @@
 
 Dynamic Visualization tool for machine learning models that displays the models
 
+![](demo_gif.gif)
+
 ## For Users
 ### Graph Visualization Usage Documentation
 
