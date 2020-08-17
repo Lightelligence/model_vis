@@ -1,8 +1,7 @@
 import argparse
 import os
 
-import create_flask_app
-import tf_proto_to_json
+from graph_visualization import create_flask_app, tf_proto_to_json
 
 
 def main():

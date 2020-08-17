@@ -1,8 +1,0 @@
-recursive-include * *.py
-recursive-include * *.so
-recursive-include * *.so.[0-9]
-recursive-include * *.js
-recursive-include * *.html
-recursive-exclude *__pycache__* *
-recursive-exclude * *.pb
-recursive-exclude sample_tf_graph.py
