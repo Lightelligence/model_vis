@@ -20,6 +20,7 @@ setup(name='model_vis',
       description=
       'An easy and interactive graph visualization tool for ML models!!!',
       long_description=long_description,
+      long_description_content_type='text/markdown',
       author_email='amipro@gmail.com',
       keywords='ML, visualization, visualize, model, graph',
       packages=find_packages(),
