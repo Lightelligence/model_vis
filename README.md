@@ -8,9 +8,9 @@ Dynamic Visualization tool for machine learning models that displays the models
 ### Graph Visualization Usage Documentation
 
 #### Usage
-```pip install model-vis<br/>```
+```pip install model-vis```
 
-```python -m graph_visualization.plot_graph```<br/>```--pb_graph_path=```_```path_to_protobuf/protobuf.```_```pb```
+```python -m graph_visualization.plot_graph \ --pb_graph_path=```_```path_to_protobuf/protobuf.```_```pb```
 
 
 Required Parameter:
@@ -125,7 +125,7 @@ model_vis$ conda activate vis-env
 ```ln -s $(which bazelisk) bazel```
 
 ### Running the file (thorugh bazel)
-`bazel run //graph_visualization:plot_graph`<br/>` -- --pb_graph_path=`_`abs_path_to_protobuf/protobuf.`_`pb`<br/>`--port=`_`port_no`<br/>_
+`bazel run //graph_visualization:plot_graph \ -- --pb_graph_path=`_`abs_path_to_protobuf/protobuf.`_`pb --port=`_`port_no`_
 
 Required Parameters:
 -- pb_graph_path (str , path to the protobuf file on the system)
