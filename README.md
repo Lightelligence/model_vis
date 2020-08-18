@@ -8,9 +8,9 @@ Dynamic Visualization tool for machine learning models that displays the models
 ### Graph Visualization Usage Documentation
 
 #### Usage
-`pip install model-vis`<br/>
+```pip install model-vis<br/>```
 
-`python -m graph_visualization.plot_graph`<br/>`--pb_graph_path=`_`path_to_protobuf/protobuf.`_`pb`
+```python -m graph_visualization.plot_graph```<br/>```--pb_graph_path=```_```path_to_protobuf/protobuf.```_```pb```
 
 
 Required Parameter:
