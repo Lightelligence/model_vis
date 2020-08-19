@@ -2,11 +2,15 @@
 
 Dynamic Visualization tool for machine learning models that displays the models
 
+![](gif_demo.gif)
+
 ## For Users
 ### Graph Visualization Usage Documentation
 
 #### Usage
-`python -m graph_visualization.plot_graph`<br/>`--pb_graph_path=`_`path_to_protobuf/protobuf.`_`pb`
+```pip install model-vis```
+
+```python -m graph_visualization.plot_graph \ --pb_graph_path=```_```path_to_protobuf/protobuf.```_```pb```
 
 
 Required Parameter:
@@ -98,7 +102,9 @@ The graph visualization is based on Node JS and the visualization library [D3](h
 
 ### Requirements
 
-#### 1. Conda (using Miniconda)
+#### 1. Clone the repo from github
+
+#### 2. Conda (using Miniconda)
 
 ###### Setup Miniconda
 
@@ -112,14 +118,14 @@ model_vis$ conda activate vis-env
 (vis-env) model_vis $
 ```
 
-#### 2. Bazel
+#### 3. Bazel
 [Bazel](https://www.bazel.build) can be installed with [Bazelisk](https://docs.bazel.build/versions/master/install-bazelisk.html) , it downloads the appropriate bazel version for the current working directory.
 
 ###### Create symbolic link to use bazelisk whenever "bazel" is called
 ```ln -s $(which bazelisk) bazel```
 
-### Running the file
-`bazel run //sdk2/visuals/javascript_tests:plot_lgf_graph --`<br/>`--pb_graph_path=`_`path_to_protobuf/protobuf.`_`pb`<br/>`--port=`_`port_no`<br/>_
+### Running the file (thorugh bazel)
+`bazel run //graph_visualization:plot_graph \ -- --pb_graph_path=`_`abs_path_to_protobuf/protobuf.`_`pb --port=`_`port_no`_
 
 Required Parameters:
 -- pb_graph_path (str , path to the protobuf file on the system)
@@ -131,3 +137,5 @@ Optional Parameters :
 -- port (int, default port is 5000).
 
 -- pb_graph_type (str , currently only supports "tf" and is default. Other types like .onnx to be supported in future)
+
+Click the link provided by the terminal to open into visualization in browser

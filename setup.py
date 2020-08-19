@@ -16,11 +16,20 @@ long_description = (here / 'README.md').read_text(encoding='utf-8')
 # Fields marked as "Optional" may be commented out.
 
 setup(name='model_vis',
-      version='0.0.1',
+      version='0.0.22',
+      python_requires='>3.0.0',
       description=
       'An easy and interactive graph visualization tool for ML models!!!',
       long_description=long_description,
+      long_description_content_type='text/markdown',
       author_email='amipro@gmail.com',
+      install_requires=[
+          'onnx==1.6', 'tensorflow==1.14', 'isort', 'flask', 'networkx',
+          'flake8', 'flake8-quotes', 'deprecated', 'sklearn', 'yapf', 'Flask',
+          'protobuf', 'absl-py', 'gast', 'astor', 'termcolor',
+          'keras_applications', 'keras_preprocessing', 'plotly', 'onnxruntime',
+          'Pillow'
+      ],
       keywords='ML, visualization, visualize, model, graph',
       packages=find_packages(),
       include_package_data=True,
