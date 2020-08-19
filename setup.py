@@ -24,7 +24,7 @@ setup(name='model_vis',
       long_description_content_type='text/markdown',
       author_email='amipro@gmail.com',
       install_requires=[
-          'onnx==1.6', 'tensorflow==1.14', 'isort', 'flask', 'networkx',
+          'onnx==1.6', 'tensorflow==1.15.2', 'isort', 'flask', 'networkx',
           'flake8', 'flake8-quotes', 'deprecated', 'sklearn', 'yapf', 'Flask',
           'protobuf', 'absl-py', 'gast', 'astor', 'termcolor',
           'keras_applications', 'keras_preprocessing', 'plotly', 'onnxruntime',
