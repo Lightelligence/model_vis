@@ -5,24 +5,8 @@ dependencies:
   - python=3.6
   - pip
   - pip:
-      - isort
-      - networkx
-      - flake8
-      - flake8-quotes
-      - deprecated
-      - sklearn
-      - yapf
-      - flask
-      - Flask
-      - protobuf
-      - absl-py
-      - gast
-      - astor
-      - termcolor
-      - keras_applications
-      - keras_preprocessing
-      - plotly
-      - onnx == 1.6
-      - onnxruntime
-      - Pillow
-      - tensorflow == 1.14
+      - -r file:requirements.txt
+      - isort == 5.0.4
+      - yapf == 0.3.0
+      - flake8 == 3.8.4
+      - flake8-quotes == 3.2.0

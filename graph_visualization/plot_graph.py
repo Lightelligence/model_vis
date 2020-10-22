@@ -1,5 +1,4 @@
 import argparse
-import os
 
 from graph_visualization import create_flask_app, tf_proto_to_json
 
